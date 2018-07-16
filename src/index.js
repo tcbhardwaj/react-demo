@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import MyComp from "./MyComp";
-import Form from "./Form";
+import Form from "/src/Form";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./styles.css";
@@ -14,10 +14,10 @@ function App() {
       <hr />
       <MyComp />
       <hr />
-      <Form />
+      <Form />      
     </div>
   );
 }
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+var mydiv = document.getElementById("root");
+ReactDOM.render(<App />, mydiv);
