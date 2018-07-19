@@ -9,12 +9,10 @@ import "./styles.css";
 function App() {
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-      <hr />
       <MyComp />
       <hr />
-      <Form />      
+      <h4>Form component</h4>
+      <Form />
     </div>
   );
 }
