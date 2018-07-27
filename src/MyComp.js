@@ -9,21 +9,22 @@ class MyComp extends React.Component {
     };
   }
   mycompClick(e) {
-    console.log(this.state);
+    console.log(this.state);    
     fetch("https://randomuser.me/api/?result=" + this.state.image)
       .then(result => {
         //console.log("result:" + result);
         return result.json();
       })
       .then(data => {
-        let pic = data.results.map(pic => {
+        let imageUrl = data.results.map(pic => {
           return pic.picture.medium;
         });
         this.setState({
-          imagePath: pic
+          imagePath: imageUrl
         });
-        console.log(pic);
+        console.log(imageUrl);       
       });
+      
   }
 
   selectImage(event) {
@@ -34,22 +35,10 @@ class MyComp extends React.Component {
 
   render() {
     return (
-      <div>
-        <select
-          className="form-control"
-          value={this.state.imageValue}
-          onChange={this.selectImage.bind(this)}
-        >
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
+      <div className="row">        
         <button
           className="btn btn-default"
-          onClick={this.mycompClick.bind(this)}
-        >
+          onClick={this.mycompClick.bind(this)}>
           Click to change Pic
         </button>
         <div>

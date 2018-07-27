@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import Form from './Form';
 import Box from './components/Box';
+import MyComp from './MyComp';
+import Header from './components/Header';
 
 class App extends Component {
   
@@ -21,9 +23,10 @@ class App extends Component {
   render() {
     
     return (
-      <div className="App">               
+      <div className="App"> 
+        <Header />              
         <Form />
-        
+        <MyComp />
         <Box header="My Header1" width="200px" display={true} message="this is first box" />
         <Box header="My Header2" width="200px" display={true} message={this.state.msg} />
         <Box header="My Header3" width="200px" display={true} message="this is third box" />
