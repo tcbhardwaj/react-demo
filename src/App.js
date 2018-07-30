@@ -4,6 +4,7 @@ import Form from './Form';
 import Box from './components/Box';
 import MyComp from './MyComp';
 import Header from './components/Header';
+import DataService from './service/DataService';
 
 class App extends Component {
   
@@ -41,6 +42,7 @@ class App extends Component {
             
           </div>
         </div>
+        <DataService />
       </div>
     );
   }
