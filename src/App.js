@@ -7,40 +7,42 @@ import Header from './components/Header';
 import DataService from './service/DataService';
 
 class App extends Component {
-  
+
   constructor(props) {
     super(props);
     this.state = {
       display: false,
-      msg: "this is second box!!!"      
+      msg: "this is second box!!!"
     }
   }
 
   handleClick() {
     this.setState({
-      display: this.state.display ? false : true,      
+      display: this.state.display ? false : true,
     })
   }
   render() {
-    
+
     return (
-      <div className="App"> 
-        <Header />              
+      <div className="App">
+        <Header />
         <Form />
         <MyComp />
-        <Box header="My Header1" width="200px" display={true} message="this is first box" />
-        <Box header="My Header2" width="200px" display={true} message={this.state.msg} />
-        <Box header="My Header3" width="200px" display={true} message="this is third box" />
+        <Box header="My Header1" width="200px" display={true} >
+          <p>this is first box</p>
+        </Box>
+        <Box header="My Header2" width="200px" display={true} />
+        <Box header="My Header3" width="200px" display={true} />
         <div className="row">
           <div className="col-4">
-          <button className="btn btn-info" onClick={this.handleClick.bind(this)}>{this.state.display ? "Hide Box" : "Show Box"}</button>
+            <button className="btn btn-info" onClick={this.handleClick.bind(this)}>{this.state.display ? "Hide Box" : "Show Box"}</button>
           </div>
           <div className="col-8">
-            <Box header="My Header4" width="300px" display={this.state.display} message="this is fourth box" >
-            <button className="btn btn-success">hello</button>
+            <Box header="My Header4" width="200px" display={this.state.display} message="this is fourth box" >
+              <button className="btn btn-success">hello</button>
             </Box>
-            
-          </div>
+
+          </div>         
         </div>
         <DataService />
       </div>

@@ -32,7 +32,7 @@ export default class Box extends React.Component {
                 <div style={hederStyle}><h6>{this.props.header}</h6></div>            
                 <div class="modal-body">                    
                     <p>
-                        {this.props.message} 
+                        {this.props.children} 
                     </p>
                 </div>
             </div>
